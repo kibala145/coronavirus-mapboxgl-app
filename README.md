@@ -1,4 +1,4 @@
-# Simple coronavirus map, getting data from https://coronavirus-tracker-api.herokuapp.com/, so if it can possibly be broken in future
+# Simple coronavirus map, getting data from https://coronavirus-tracker-api.herokuapp.com/, so it can possibly be broken in future
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
