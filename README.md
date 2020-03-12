@@ -1,5 +1,6 @@
 # About
 Simple coronavirus map, getting data from https://coronavirus-tracker-api.herokuapp.com/
+
 Also mapbox tiles hosted by https://maps.seeker.info/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
