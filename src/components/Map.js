@@ -60,8 +60,10 @@ export class Map extends React.Component {
     }
   }
   setViewport(viewport) {
+    const {latitude, longitude, zoom, bearing, pitch} = viewport
+
     this.setState({
-      mapData: {...this.state.mapData, ...viewport}
+      mapData: {...this.state.mapData, latitude, longitude, zoom, bearing, pitch}
     })
   }
   renderSource() {
@@ -92,7 +94,7 @@ export class Map extends React.Component {
       } = event,
       hoveredFeature = features && features.find(f => f.layer.id === 'points')
     
-    this.setState({hoveredFeature, popupData: {longitude, latitude}})
+    this.setState({hoveredFeature, popupData: {...this.state.popupData, longitude, latitude}})
   }
   async loadData() {
     const res = await fetch('https://coronavirus-tracker-api.herokuapp.com/confirmed')
@@ -120,7 +122,7 @@ export class Map extends React.Component {
   render() {
     return (
       <ReactMapGL {...this.state.mapData}>
-        <GeolocateControl {...this.state.geolocateControlData}/>
+        <GeolocateControl trackUserLocation={false} {...this.state.geolocateControlData}/>
         {this.renderSource()}
         {this.renderTooltip()}
       </ReactMapGL>
